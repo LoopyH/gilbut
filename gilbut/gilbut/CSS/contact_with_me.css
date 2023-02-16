@@ -1,0 +1,74 @@
+/* section.contact{
+    padding: 80px 0;
+}
+section .container{
+    margin: 0 256px;
+    height: 100%;
+} */
+section .contact-me::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+section .container .title h2{
+    font-size: 56px;
+}
+section .contact-me .left{
+    width: 30%;
+    float: left;
+}
+section .contact-me .left .card{
+    border: 1px solid #ccc;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+section .container .contact-me .left .card .icon i{
+    font-size: 2rem;
+    margin-right: 15px;
+}
+section .contact-me .right{
+    width: 65%;
+    float: left;
+    margin-left: 5%;
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
+section .contact-me .right .form-group{
+    margin-bottom: 1.25rem;
+} 
+section .contact-me .right .form-group label{
+    display: block;
+    margin-bottom: 0.85rem;
+}
+section .contact-me .right .form-group input{
+    width: 100%;
+    padding: 0.625rem;
+    outline: none;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+section .contact-me .right .form-group input:focus{
+    border: 1px solid #7192c2;
+    box-shadow: 0 0 10px #7192c2 ; /*번짐 정도*/
+}
+section .contact-me .right .form-group textarea{
+    width: 100%;
+    height: 300px;
+    outline: none;
+    resize: none;
+}
+section .contact-me .right .form-group textarea:focus{
+    border: 1px solid #7192c2;
+    box-shadow: 0 0 10px #7192c2 ; /*번짐 정도*/
+}
+section .contact-me .right button{
+    width: 100%;
+    padding: 1rem;
+    background-color: #f78b00;
+    border: none;
+    color: white;
+}
+
+

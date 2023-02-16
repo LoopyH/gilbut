@@ -1,0 +1,33 @@
+header{
+    position: fixed;
+    top:0;
+    width:100%;
+    padding:1rem;
+}
+header .container{
+    display:flex;
+    justify-content: space-between; /*하위 자식태그가 2개 있을 때, 각각 양쪽 끝에 붙음*/
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+}
+header button{
+    color : white;
+    background-color: transparent;
+    border:0;
+    cursor: pointer;
+}
+header h1 button{
+    font-size:2rem;
+    font-weight: bold;
+}
+header nav ul{
+    display:flex;  /* 플렉스 레이아웃 기본 속성, 줄바꿈*/
+}
+header nav ul li{
+    padding:10px;
+}
+header nav ul li button{
+    font-size: 1.2rem;
+    
+}

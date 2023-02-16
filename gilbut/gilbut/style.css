@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap');
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a, a:link, a:visited{ /*링크 가상 클래스 선택자*/
+    color:inherit; /* 부모요소에게 상속 */
+    text-decoration: none; /*a링크의 밑줄 제거*/
+}
+li{
+    list-style: none;
+}
+.container{
+    width: 1140px;
+    margin: 0 auto;
+}
+/*header*/
+header{
+    position: fixed;
+    top:0;
+    width:100%;
+    padding:1rem;
+}
+header .container{
+    display:flex;
+    justify-content: space-between; /*하위 자식태그가 2개 있을 때, 각각 양쪽 끝에 붙음*/
+    align-items: center;
+    width: 100%;
+}
+header button{
+    color : white;
+    background-color: transparent;
+    border:0;
+    cursor: pointer;
+}
+header h1 button{
+    font-size:2rem;
+    font-weight: bold;
+}
+header nav ul{
+    display:flex;  /* 플렉스 레이아웃 기본 속성, 줄바꿈*/
+}
+header nav ul li{
+    padding:10px;
+}
+header nav ul li button{
+    font-size: 1.2rem;
+    
+}
+header.active{
+    background-color: black;
+    animation:fadeIn 0.5s ease-in-out ;
+    z-index: 1;
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*main*/
+main{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    color:white;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('./images/me.jpg') center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+main h3{
+    font-size: 2rem;
+}
+main h2{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 3.5rem;
+    margin: 2rem 0;
+    letter-spacing: 3px;
+}
+main p{
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+}
+main button.download{
+    background-color: transparent;
+    border:3px solid white;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    color : white;
+    font-weight: bold;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+main button.mouse{
+    background-color: transparent;
+    font-size: 2rem;
+    border: none;
+    color: white;
+    bottom: 1rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: updown 1s ease-in-out infinite;
+    cursor: pointer;
+}
+main h2 span::after{
+    content:"";
+    height: 40px;
+    width: 3px;
+    background-color: #fff;
+    display: inline-block;
+    animation: blink .7s ease-in-out infinite;
+ }
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+ }
+@keyframes updown{
+    0%{
+        bottom:1rem;
+    }
+    50%{
+        bottom:1.5rem;
+    }
+    100%{
+        bottom: 1rem;
+    }
+}
+section{
+    font-family: 'Poppins', sans-serif;
+    padding: 5rem 0;
+}
+section:nth-child(2n){  /*짝수 번째의 섹션에 적용*/
+    background-color: #f8f8f8;
+}
+section title{
+    margin-bottom: 3rem;
+}
+section .title h4{
+    color : #ED4848;
+    font-size: 1.35rem;
+    position: relative;
+}
+section .title h2{
+    color : black;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+/*about me*/
+section .about-self::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+section .about-self .left{ /*본문 너비 절반 지정 & 왼쪽 배치*/
+    width: 50%;
+    float: left;
+}
+section .about-self .left img{ /*이미지 크기가 부모 영역을 넘지 않도록 부모영역의 최대 크기로 지정*/
+    max-width: 100%;
+} 
+section .about-self .right{ /*본문 너비 절반 지정 & 오른쪽 배치*/
+    width: 50%;
+    float: left;
+    padding: 0 2rem;
+}
+section .about-self .right h3{
+    font-size: 2.25rem;
+    margin-bottom : 1rem;
+}
+section .about-self .right h3 strong{
+    color: #ED4848;
+}
+section .about-self .right p{
+    margin: 1rem 0;
+}
+section .about-self .right .social a{
+    font-size: 2.5rem;
+
+}
+/*what i do */
+
+section .do-me::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+section .do-me .do-inner{
+    background-color: white;
+    width: 30%;
+    padding: 2rem;
+    float: left;
+    margin-right: 5%;
+    cursor: pointer;
+}
+section .do-me .do-inner:last-child{
+    margin-right: 0;
+}
+section .do-me .do-inner .icon{
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    color: lightcoral;
+}
+section .do-me .do-inner:hover .icon{
+    color: white;
+}
+
+section .do-me .do-inner .content h3{
+    margin: 1rem 0;
+    font-size: 2rem;
+}
+section .do-me .do-inner .content p{
+    font-size: 1.15rem;
+}
+section .do-me .do-inner:hover{
+    background-color: lightcoral;
+    color: white;
+}
+/*bg*/
+.bg{
+    background: url('./images/background.jpg') center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 650px;
+}
+/*portfolio*/
+section#portfolio::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+section#portfolio.portfolio{
+    padding: 80px 0px;
+    background-color: #f8f8f8;
+    color: #000000;
+}
+section .portfolio-me .portfolio-inner:nth-child(3n){
+    margin-right: 0;
+
+}
+section .portfolio-me .portfolio-inner{
+    width: 30%;
+    margin-right: 5%;
+    background-color: #fff;
+    float: left;
+    padding: 1rem 1rem 1.5rem 1rem;
+    border: 1px solid #ccc;
+    margin-bottom: 3rem;
+}
+section strong{
+    color: #ff6a6a;
+    font-size: 2.25rem;
+    margin: 8px 0px;
+    /* display: block; */
+}
+section h3{
+    font-size: 1.78rem;
+
+}
+section .portfolio-me .portfolio-inner img{
+    width: 100%;
+    display: block;
+}
+/*contact with me*/
+/* section.contact{
+    padding: 80px 0;
+}
+section .container{
+    margin: 0 256px;
+    height: 100%;
+} */
+section .contact-me::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+section .container .title h2{
+    font-size: 3.5rem;
+}
+section .contact-me .left{
+    width: 30%;
+    float: left;
+}
+section .contact-me .left .card{
+    border: 1px solid #ccc;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+section .container .contact-me .left .card .icon i{
+    font-size: 2rem;
+    margin-right: 15px;
+}
+section .contact-me .right{
+    width: 65%;
+    float: left;
+    margin-left: 5%;
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
+section .contact-me .right .form-group{
+    margin-bottom: 1.25rem;
+} 
+section .contact-me .right .form-group label{
+    display: block;
+    margin-bottom: 0.85rem;
+}
+section .contact-me .right .form-group input{
+    width: 100%;
+    padding: 0.625rem;
+    outline: none;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+section .contact-me .right .form-group input:focus{
+    border: 1px solid #7192c2;
+    box-shadow: 0 0 10px #7192c2 ; /*번짐 정도*/
+}
+section .contact-me .right .form-group textarea{
+    width: 100%;
+    height: 300px;
+    outline: none;
+    resize: none;
+}
+section .contact-me .right .form-group textarea:focus{
+    border: 1px solid #7192c2;
+    box-shadow: 0 0 10px #7192c2 ; /*번짐 정도*/
+}
+section .contact-me .right button{
+    width: 100%;
+    padding: 1rem;
+    background-color: #f78b00;
+    border: none;
+    color: white;
+}
+@media screen and (max-width:1140px){ /*1140px보다 작아졌을 때 적용*/
+    main .container{
+        width:992px;
+    }
+    section .container{
+        width: 600px;
+    }
+    section .about-self .left{
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    section .about-self .right{
+        width: 100%;
+        padding: 0;
+    }
+    section .do-me .do-inner{
+        width: 48%;
+        margin-bottom: 1.5rem;
+        margin-right: 0;
+    }
+    section .do-me .do-inner:nth-child(2n+1){
+        margin-right: 4%;
+    }
+    section .portfolio-me .portfolio-inner{
+        width:48%;
+        margin-right: 0;
+    }
+    section .portfolio-me .portfolio-inner:nth-child(2n+1){
+        margin-right: 4%;
+    }
+    section .contact-me .left{
+        width: 100%;
+    }
+    section .contact-me .right{
+        width: 100%;
+        margin-left: 0;
+    }
+}
+@media screen and (max-width:992px){
+    html{
+        font-size:14px;
+    }
+    main .container{
+         width:768;
+    }
+    section .portfolio-me .portfolio-inner{
+    width: 100%;
+    }
+}
+@media screen and (max-width:768px){
+    html{
+        font-size:13px;
+    }
+    main .container{
+         width:576;
+    }
+    section .container{
+        width: 400px;
+    }
+    section .do-me .do-inner{
+        width: 100%;
+        margin-right: 0;
+    }
+}
+@media screen and (max-width:576px){
+    html{
+        font-size:12px;
+    }
+    main .container{
+         width:400;
+    }
+    section .container{
+        width: 360px;
+    }
+}
+@media screen and (max-width:400px){
+    html{
+        font-size:11px; /*글자 크기는 점점 작아진다. 11까지*/
+    }
+    main .container{
+        width:320px;
+    }
+    section .container{
+        width: 320px;
+    }
+    main h4{
+        font-size: 1.5rem;
+    }
+    section .container .title h2{
+        font-size: 3rem;
+    }
+}
+
+
